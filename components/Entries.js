@@ -1,25 +1,26 @@
+import styled from "styled-components";
 import Container from "./Container";
+import ButtonBookmark from "./ButtonBookmark";
 
-export default function Entries({ entries }) {
-  console.log(entries);
+const StyledArticle = styled.article`
+  position: relative;
+`;
+
+export default function Entries({ entries, handleBookmark }) {
   return (
     <Container direction="column" align="center">
       {entries.map((entry) => (
-        <article key={entry.id}>
+        <StyledArticle key={entry.id}>
           <p>{entry.date}</p>
           <p>{entry.title}</p>
           <p>{entry.text}</p>
-          <button>SVG</button>
-        </article>
+          <ButtonBookmark
+            entry={entry}
+            id={entry.id}
+            handleBookmark={handleBookmark}
+          />
+        </StyledArticle>
       ))}
     </Container>
   );
 }
-
-/*  {
-  id: "00000000",
-  title: "Beispiel-Titel",
-  text: "Hier könnte dein Beitrag stehen. Trage schnell etwas ins Formular ein um zu starten!",
-  date: "10.06.2023",
-  isFavorite: false,
-} */
