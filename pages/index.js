@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Container from "@/components/Container";
 import useLocalStorageState from "use-local-storage-state";
 import Entries from "@/components/Entries";
+import Form from "@/components/Form";
 
 export default function Home() {
   const [entries, setEntries] = useLocalStorageState("personalEntries", {
@@ -23,11 +24,22 @@ export default function Home() {
     ],
   });
 
+  function handleNewEntry(dataNewEntry) {
+    const NewEntry = {
+      id: uid(),
+      title: dataNewEntry.formInput,
+      text: dataNewEntry.formTextarea,
+      date: new Date().toLocaleDateString("de-DE"),
+      isFavorite: false,
+    };
+    setEntries([NewEntry, ...entries]);
+  }
+
   return (
     <>
       <Header title="JOURNAL in Next.js" />
       <Container direction="column" align="center">
-        <p>form</p>
+        <Form handleNewEntry={handleNewEntry} />
         <Container direction="column" align="center">
           <p>tabBar</p>
           <Container direction="column" align="center">
