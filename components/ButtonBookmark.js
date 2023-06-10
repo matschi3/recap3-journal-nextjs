@@ -4,7 +4,7 @@ import Bookmarked from "./svg/Bookmarked.js";
 
 const StyledButtonBookmark = styled.button`
   position: absolute; //to relative entrysArticle
-  top: 3px;
+  top: 1px;
   right: 1px;
 `;
 
@@ -13,7 +13,7 @@ export default function ButtonBookmark({ entry, handleBookmark }) {
     <StyledButtonBookmark
       onClick={() => {
         handleBookmark(entry.id);
-        console.log(entry.id);
+        console.log("Bookmark switch!", entry.id);
       }}
     >
       {entry.isFavorite ? <Bookmarked /> : <Bookmark />}

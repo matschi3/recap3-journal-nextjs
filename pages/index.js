@@ -37,6 +37,13 @@ export default function Home() {
     setEntries(newEntries);
   }
 
+  function handleDelete(id) {
+    const newEntries = entries.filter((entry) => {
+      return entry.id != id;
+    });
+    setEntries(newEntries);
+  }
+
   return (
     <>
       <Header title="JOURNAL in Next.js" />
@@ -45,7 +52,11 @@ export default function Home() {
         <Container direction="column" align="center">
           <p>tabBar</p>
           <Container direction="column" align="center">
-            <Entries entries={entries} handleBookmark={handleBookmark} />
+            <Entries
+              entries={entries}
+              handleBookmark={handleBookmark}
+              handleDelete={handleDelete}
+            />
           </Container>
         </Container>
       </Container>
