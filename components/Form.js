@@ -3,26 +3,18 @@ import styled from "styled-components";
 const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
+  align-items: center;
 `;
 
-const StyledInput = styled.input`
-  align-self: center;
-`;
+const StyledInput = styled.input``;
 
-const StyledTextarea = styled.textarea`
-  align-self: center;
-`;
+const StyledTextarea = styled.textarea``;
 
-const StyledLabel = styled.label`
-  align-self: center;
-`;
+const StyledLabel = styled.label``;
 
-const StyledLegend = styled.legend`
-  align-self: center;
-`;
+const StyledLegend = styled.legend``;
 
 const StyledButtonSubmit = styled.button`
-  align-self: center;
   background-color: var(--color-nemo);
 `;
 
