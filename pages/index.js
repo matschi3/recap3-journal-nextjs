@@ -13,13 +13,6 @@ export default function Home() {
         title: "Beispiel-Titel",
         text: "Hier könnte dein Beitrag stehen. Trage schnell etwas ins Formular ein um zu starten!",
         date: "09.06.2023",
-        isFavorite: true,
-      },
-      {
-        id: "00000001",
-        title: "Beispiel-Titel #2",
-        text: "Hier könnte dein Beitrag stehen. Trage schnell etwas ins Formular ein um zu starten!",
-        date: "10.06.2023",
         isFavorite: false,
       },
     ],
