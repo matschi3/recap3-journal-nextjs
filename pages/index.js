@@ -3,6 +3,7 @@ import Container from "@/components/Container";
 import useLocalStorageState from "use-local-storage-state";
 import Entries from "@/components/Entries";
 import Form from "@/components/Form";
+import { uid } from "uid";
 
 export default function Home() {
   const [entries, setEntries] = useLocalStorageState("personalEntries", {

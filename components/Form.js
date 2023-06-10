@@ -27,18 +27,17 @@ const StyledButtonSubmit = styled.button`
   background-color: var(--color-nemo);
 `;
 
-export default function Form() {
+export default function Form({ handleNewEntry }) {
   function handleSubmit(event) {
     event.preventDefault();
     const formData = new FormData(event.target);
     const dataNewEntry = Object.fromEntries(formData);
-    console.log(dataNewEntry);
     handleNewEntry(dataNewEntry);
     event.target.reset();
     event.target.formInput.focus();
   }
   return (
-    <StyledForm aria-labelledby="formLegend">
+    <StyledForm onSubmit={handleSubmit} aria-labelledby="formLegend">
       <StyledLegend id="formlegend">Create new Entry here</StyledLegend>
 
       <StyledLabel htmlFor="formInput">Motto</StyledLabel>
