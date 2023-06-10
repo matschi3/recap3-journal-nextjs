@@ -8,10 +8,14 @@ const StyledButtonBookmark = styled.button`
   right: 1px;
 `;
 
-export default function ButtonBookmark({ entry }) {
-  console.log(entry);
+export default function ButtonBookmark({ entry, handleBookmark }) {
   return (
-    <StyledButtonBookmark>
+    <StyledButtonBookmark
+      onClick={() => {
+        handleBookmark(entry.id);
+        console.log(entry.id);
+      }}
+    >
       {entry.isFavorite ? <Bookmarked /> : <Bookmark />}
     </StyledButtonBookmark>
   );

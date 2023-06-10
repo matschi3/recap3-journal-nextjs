@@ -36,6 +36,14 @@ export default function Home() {
     setEntries([NewEntry, ...entries]);
   }
 
+  function handleBookmark(id) {
+    const newEntries = entries.map((entry) => {
+      if (entry.id != id) return entry;
+      return { ...entry, isFavorite: !entry.isFavorite };
+    });
+    setEntries(newEntries);
+  }
+
   return (
     <>
       <Header title="JOURNAL in Next.js" />
@@ -44,7 +52,7 @@ export default function Home() {
         <Container direction="column" align="center">
           <p>tabBar</p>
           <Container direction="column" align="center">
-            <Entries entries={entries} />
+            <Entries entries={entries} handleBookmark={handleBookmark} />
           </Container>
         </Container>
       </Container>

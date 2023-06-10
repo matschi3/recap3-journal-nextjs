@@ -6,7 +6,7 @@ const StyledArticle = styled.article`
   position: relative;
 `;
 
-export default function Entries({ entries }) {
+export default function Entries({ entries, handleBookmark }) {
   return (
     <Container direction="column" align="center">
       {entries.map((entry) => (
@@ -14,7 +14,11 @@ export default function Entries({ entries }) {
           <p>{entry.date}</p>
           <p>{entry.title}</p>
           <p>{entry.text}</p>
-          <ButtonBookmark entry={entry}></ButtonBookmark>
+          <ButtonBookmark
+            entry={entry}
+            id={entry.id}
+            handleBookmark={handleBookmark}
+          />
         </StyledArticle>
       ))}
     </Container>
