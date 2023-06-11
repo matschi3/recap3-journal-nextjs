@@ -10,6 +10,7 @@ export default function Home() {
     defaultValue: [
       {
         id: "e92d0fea1b2",
+        category: "standard",
         title: "Beispiel-Titel",
         text: "Hier könnte dein Beitrag stehen. Trage schnell etwas ins Formular ein um zu starten!",
         date: "09.06.2023",
@@ -21,6 +22,7 @@ export default function Home() {
   function handleNewEntry(dataNewEntry) {
     const NewEntry = {
       id: uid(),
+      category: dataNewEntry.formCategory.toLowerCase(),
       title: dataNewEntry.formInput,
       text: dataNewEntry.formTextarea,
       date: new Date().toLocaleDateString("de-DE"),
