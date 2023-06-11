@@ -54,7 +54,7 @@ export default function Home() {
       <Container direction="column" align="center">
         <Form handleNewEntry={handleNewEntry} />
         <Container direction="column" align="center">
-          <TabBar />
+          <TabBar entries={entries} />
           <Container direction="column" align="center">
             <Entries
               entries={entries}
