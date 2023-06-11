@@ -9,7 +9,7 @@ export default function Home() {
   const [entries, setEntries] = useLocalStorageState("personalEntries", {
     defaultValue: [
       {
-        id: "00000000",
+        id: "e92d0fea1b2",
         title: "Beispiel-Titel",
         text: "Hier könnte dein Beitrag stehen. Trage schnell etwas ins Formular ein um zu starten!",
         date: "09.06.2023",
@@ -31,6 +31,7 @@ export default function Home() {
 
   function handleBookmark(id) {
     const newEntries = entries.map((entry) => {
+      console.log(entry.id);
       if (entry.id != id) return entry;
       return { ...entry, isFavorite: !entry.isFavorite };
     });

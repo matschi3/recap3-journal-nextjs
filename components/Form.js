@@ -6,15 +6,24 @@ const StyledForm = styled.form`
   align-items: center;
 `;
 
-const StyledInput = styled.input``;
+const StyledInput = styled.input`
+  margin: 0.2rem;
+`;
 
-const StyledTextarea = styled.textarea``;
+const StyledTextarea = styled.textarea`
+  margin: 0.2rem;
+`;
 
-const StyledLabel = styled.label``;
+const StyledLabel = styled.label`
+  margin: 0.2rem;
+`;
 
-const StyledLegend = styled.legend``;
+const StyledLegend = styled.legend`
+  margin: 0.2rem;
+`;
 
 const StyledButtonSubmit = styled.button`
+  margin: 0.2rem;
   background-color: var(--color-nemo);
 `;
 
@@ -29,7 +38,7 @@ export default function Form({ handleNewEntry }) {
   }
   return (
     <StyledForm onSubmit={handleSubmit} aria-labelledby="formLegend">
-      <StyledLegend id="formlegend">Create new Entry here</StyledLegend>
+      <StyledLegend id="formLegend">Create new Entry here</StyledLegend>
 
       <StyledLabel htmlFor="formInput">Motto</StyledLabel>
       <StyledInput type="text" id="formInput" name="formInput" required />

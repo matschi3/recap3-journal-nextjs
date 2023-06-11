@@ -8,6 +8,11 @@ const StyledArticle = styled.article`
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 99vw;
+`;
+
+const StyledParagraph = styled.p`
+  width: 75vw;
 `;
 
 export default function Entries({ entries, handleBookmark, handleDelete }) {
@@ -15,9 +20,9 @@ export default function Entries({ entries, handleBookmark, handleDelete }) {
     <Container direction="column" align="center">
       {entries.map((entry) => (
         <StyledArticle key={entry.id}>
-          <p>{entry.date}</p>
-          <p>{entry.title}</p>
-          <p>{entry.text}</p>
+          <StyledParagraph>{entry.date}</StyledParagraph>
+          <StyledParagraph>{entry.title}</StyledParagraph>
+          <StyledParagraph>{entry.text}</StyledParagraph>
           <ButtonBookmark
             entry={entry}
             id={entry.id}
