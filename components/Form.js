@@ -40,6 +40,9 @@ export default function Form({ handleNewEntry }) {
     <StyledForm onSubmit={handleSubmit} aria-labelledby="formLegend">
       <StyledLegend id="formLegend">Create new Entry here</StyledLegend>
 
+      <StyledLabel htmlFor="formCategory">Category</StyledLabel>
+      <StyledInput type="text" id="formCategory" name="formCategory" required />
+
       <StyledLabel htmlFor="formInput">Motto</StyledLabel>
       <StyledInput type="text" id="formInput" name="formInput" required />
 
