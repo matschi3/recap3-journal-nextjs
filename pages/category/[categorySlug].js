@@ -1,10 +1,10 @@
 import { useRouter } from "next/router";
 import Link from "next/link";
-import Container from "./Container";
-import ButtonBookmark from "./ButtonBookmark";
-import ButtonDelete from "./ButtonDelete";
-import StyledArticle from "./StyledArticle";
-import StyledParagraph from "./StyledParagraph";
+import Container from "@/components/Container";
+import ButtonBookmark from "@/components/ButtonBookmark";
+import ButtonDelete from "@/components/ButtonDelete";
+import StyledArticle from "@/components/Entries";
+import StyledParagraph from "@/components/Entries";
 
 export default function CategoryPage({ entries }) {
   const router = useRouter();
@@ -18,7 +18,7 @@ export default function CategoryPage({ entries }) {
     <>
       <Link href="/">← back</Link>
       <Container direction="column" align="center">
-        {entries.map((entry) => (
+        {filteredEntries.map((entry) => (
           <StyledArticle key={entry.id}>
             <StyledParagraph>{entry.date}</StyledParagraph>
             <StyledParagraph>{entry.title}</StyledParagraph>
