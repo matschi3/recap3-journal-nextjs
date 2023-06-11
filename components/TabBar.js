@@ -7,7 +7,7 @@ export default function TabBar({ entries }) {
     <nav>
       {Array.from(categories).map((category) => (
         <Link key={category} href={`/category/${category.categorySlug}`}>
-          <a>{category}</a>
+          {category}
         </Link>
       ))}
     </nav>
