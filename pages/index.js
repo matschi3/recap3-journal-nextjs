@@ -4,6 +4,7 @@ import useLocalStorageState from "use-local-storage-state";
 import Entries from "@/components/Entries";
 import Form from "@/components/Form";
 import { uid } from "uid";
+import TabBar from "@/components/TabBar";
 
 export default function Home() {
   const [entries, setEntries] = useLocalStorageState("personalEntries", {
@@ -53,7 +54,7 @@ export default function Home() {
       <Container direction="column" align="center">
         <Form handleNewEntry={handleNewEntry} />
         <Container direction="column" align="center">
-          <p>tabBar</p>
+          <TabBar />
           <Container direction="column" align="center">
             <Entries
               entries={entries}
